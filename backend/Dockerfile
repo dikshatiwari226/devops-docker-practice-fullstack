@@ -29,4 +29,8 @@ EXPOSE 8000
 
 # Use Gunicorn for production; replace 'myproject' with your actual project na,e
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "config.wsgi:application"]
+
+#CMD ["gunicorn","config.wsgi:application","--bind","0.0.0.0:8000","--timeout","120"]
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
